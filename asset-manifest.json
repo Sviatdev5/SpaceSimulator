@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/static/css/main.8cba6f75.css",
+    "main.js": "/static/js/main.99f5c862.js",
+    "static/media/background.jpg": "/static/media/background.761dfcbaf0d38a5f996e.jpg",
+    "static/media/sun.jpg": "/static/media/sun.42782c9b643f26fec9d5.jpg",
+    "static/media/emergency_mode.jpg": "/static/media/emergency_mode.a4fa98212d6d5ce18898.jpg",
+    "static/media/satelite.jpg": "/static/media/satelite.67642e9949ab1b31d88c.jpg",
+    "static/media/space_ship.jpg": "/static/media/space_ship.9df1eb6adc5b7064e878.jpg",
+    "static/media/remont.jpg": "/static/media/remont.b6bd001792b328ccec0e.jpg",
+    "static/media/combat_readiness.jpg": "/static/media/combat_readiness.d6a0981daf9dea6e445b.jpg",
+    "static/media/neptun.jpg": "/static/media/neptun.77625e0e89f1ba024414.jpg",
+    "static/media/normal_mode.jpg": "/static/media/normal_mode.225019883cf275b74e9a.jpg",
+    "static/media/space.jpg": "/static/media/space.29b9b77ed6285595d65d.jpg",
+    "static/media/hyperprostir.jpg": "/static/media/hyperprostir.050c7e202be636755afc.jpg",
+    "static/media/moon.jpg": "/static/media/moon.f36c18268e56eff74764.jpg",
+    "index.html": "/index.html",
+    "main.8cba6f75.css.map": "/static/css/main.8cba6f75.css.map",
+    "main.99f5c862.js.map": "/static/js/main.99f5c862.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8cba6f75.css",
+    "static/js/main.99f5c862.js"
+  ]
+}
