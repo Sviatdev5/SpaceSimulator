@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/SpaceSimulator/static/css/main.a9963eb6.css",
-    "main.js": "/SpaceSimulator/static/js/main.7f4e0be5.js",
+    "main.js": "/SpaceSimulator/static/js/main.d00f46e3.js",
     "static/media/background.jpg": "/SpaceSimulator/static/media/background.761dfcbaf0d38a5f996e.jpg",
     "static/media/sun.jpg": "/SpaceSimulator/static/media/sun.42782c9b643f26fec9d5.jpg",
     "static/media/emergency_mode.jpg": "/SpaceSimulator/static/media/emergency_mode.a4fa98212d6d5ce18898.jpg",
@@ -16,10 +16,10 @@
     "static/media/moon.jpg": "/SpaceSimulator/static/media/moon.f36c18268e56eff74764.jpg",
     "index.html": "/SpaceSimulator/index.html",
     "main.a9963eb6.css.map": "/SpaceSimulator/static/css/main.a9963eb6.css.map",
-    "main.7f4e0be5.js.map": "/SpaceSimulator/static/js/main.7f4e0be5.js.map"
+    "main.d00f46e3.js.map": "/SpaceSimulator/static/js/main.d00f46e3.js.map"
   },
   "entrypoints": [
     "static/css/main.a9963eb6.css",
-    "static/js/main.7f4e0be5.js"
+    "static/js/main.d00f46e3.js"
   ]
 }
