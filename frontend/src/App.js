@@ -1,5 +1,5 @@
 import React, { useContext } from "react"
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from "./components/Home"
 import ShipSection from "./components/ShipSection"
 import { useState, useEffect } from "react"
