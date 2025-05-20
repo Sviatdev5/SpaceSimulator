@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { signInWithEmailAndPassword } from "firebase/auth";
-import { auth } from "../firebase";
+import { signInWithEmailAndPassword, signInWithPopup, sendPasswordResetEmail} from "firebase/auth";
+import { auth, googleProvider } from "../firebase";
 import { useNavigate } from "react-router-dom";
 
 export default function Login() {
@@ -17,6 +17,31 @@ export default function Login() {
             alert(err.message)
         }
     };
+
+    const handleGoogleLogin = async (e) =>{
+      e.preventDefault();
+
+      try{
+        await signInWithPopup(auth, googleProvider);
+        navigate("/");
+      }catch(error){
+        alert("Помилка входу через Google: " + error.message);
+      }
+    }
+
+   const resetLogin = async () => {
+    if (!email) {
+      alert("Введіть email для скидання пароля");
+      return;
+    }
+
+    try {
+      await sendPasswordResetEmail(auth, email);
+      alert("Лист для скидання пароля надіслано на " + email);
+    } catch (error) {
+      alert("Помилка при скиданні пароля: " + error.message);
+    }
+  };
 
     return (
         
@@ -44,6 +69,16 @@ export default function Login() {
         </div>
         <div className="form-group button-container full-width">
         <button type="submit">Увійти</button>
+      </div>
+      <div>
+        <div className="form-group button-container full-width">
+          <button type="button" onClick={handleGoogleLogin}>Увійти через Google</button>
+          </div>
+      </div>
+      <div>
+      <div className="form-group button-container full-width">
+          <button type="button" onClick={resetLogin}>Забули пароль</button>
+          </div>
       </div>
         <p>
           Немає акаунту?{" "}

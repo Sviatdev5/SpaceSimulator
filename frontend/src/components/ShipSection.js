@@ -25,7 +25,7 @@ function ShipSection({currentMode,setCurrentMode, setIsModeSelected, isModeSelec
       }
       {isModeSelected &&
        <>
-      <StartEndMission isProgress={isProgress} setIsProgress={setIsProgress}/>
+      <StartEndMission isProgress={isProgress} setIsProgress={setIsProgress} selectedMission = {selectedMission}/>
       <Parameters currentMode={currentMode} />
       </>
       }

@@ -32,6 +32,7 @@ function MissionS({onMissionClick, isProgress, isMenuVisible}) {
     alert(`Видалено місію: ${mission.title}`);
 };
 
+
   const openEditModal = (mission) => {
     setCurrentMission(mission)
     setIsModalOpen(true)
@@ -60,6 +61,39 @@ function MissionS({onMissionClick, isProgress, isMenuVisible}) {
 
   }
 
+  const handleVoiceFilter = () => {
+    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+    if (!SpeechRecognition) {
+      alert("Ваш браузер не підтримує голосове розпізнавання.");
+      return;
+    }
+
+    const recognition = new SpeechRecognition();
+    recognition.lang = "uk-UA";
+    recognition.start();
+
+    recognition.onresult = (event) => {
+      const transcript = event.results[0][0].transcript.toLowerCase();
+      console.log("Розпізнано:", transcript);
+
+      // Тип місії
+      if (transcript.includes("дослідницькі")) setValueType("research");
+      else if (transcript.includes("рятувальні")) setValueType("rescue");
+      else if (transcript.includes("колонізація")) setValueType("colonization");
+      else if (transcript.includes("всі")) setValueType("all");
+
+      // Складність
+      if (transcript.includes("легкі")) setValueComplexity("easy");
+      else if (transcript.includes("середні")) setValueComplexity("medium");
+      else if (transcript.includes("важкі")) setValueComplexity("hard");
+      else if (transcript.includes("всі")) setValueComplexity("all");
+    };
+
+    recognition.onerror = (event) => {
+      alert("Помилка розпізнавання: " + event.error);
+    };
+  };
+
 
 
   return (
@@ -69,6 +103,9 @@ function MissionS({onMissionClick, isProgress, isMenuVisible}) {
       <h2>Експедиції</h2>
       <p style={{ textAlign: "center" }}>Оберіть місію та вирушайте у подорож.</p>
       <Filtr valueType={valueType} valueComplexity={valueComplexity} onChangeType={setValueType} onChangeComplexity={setValueComplexity}/>
+       
+          <button className="voice-button" onClick={handleVoiceFilter}>🎤 Фільтрувати голосом</button>
+        
       <div className="missions">
         { filteredMissions.length > 0 ? (
            filteredMissions.map((el) => (

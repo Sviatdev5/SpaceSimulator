@@ -6,6 +6,7 @@ import { onAuthStateChanged } from "firebase/auth";
 
 function Menu(){
     const [user, setUser] = useState(null);
+    const [showConfirm, setShowConfirm] = useState(false);
     const navigate = useNavigate();
 
     useEffect(() =>{
@@ -18,16 +19,25 @@ function Menu(){
     
     const handleSignOut = async(e) =>{
         e.preventDefault();
-        try{
-            await signOut(auth);
-            navigate("/");
-        } catch(err) {
-            alert(err.message)
-
-        }
+        setShowConfirm(true);
     } 
+
+    const confirmLogout = async () => {
+    try {
+      await signOut(auth);
+      setShowConfirm(false);
+      navigate("/");
+    } catch (err) {
+      alert(err.message);
+    }
+  };
+
+   const cancelLogout = () => {
+    setShowConfirm(false);
+  };
     
         return(
+             <>
                 <nav className="menu"> 
                     <ul>
                        <li><Link to="/">Головна</Link></li>
@@ -40,7 +50,24 @@ function Menu(){
 
 
                     </ul>
-                </nav> 
+                </nav>
+                {showConfirm && (
+                    <form>
+        <h2>Чи дійсно бажаєте вийти?</h2>
+        <div className="">
+        <button  onClick={confirmLogout}>Так</button>
+      </div>
+      <div>
+        <div className="">
+          <button onClick={cancelLogout} >Ні</button>
+          </div>
+      </div>
+      </form>
+           
+      )}
+            </>
+
+
         )
     }
 

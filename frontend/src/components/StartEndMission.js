@@ -1,14 +1,14 @@
+
 import React, { useState } from "react";
 
-function StartEndMission({ isProgress, setIsProgress }) {
+function StartEndMission({ isProgress, setIsProgress, selectedMission}) {
     const [bgColor, setBgColor] = useState(""); // Початковий колір
     const handleMissionChange = () => {
         setIsProgress((prev) => {
           const newProgress = !prev; // Перемикаємо значення
       
           // Міняємо колір кнопки
-          setBgColor(newProgress ? "#ae1b1b" : "#00AEEF");
-      
+          setBgColor(newProgress ? "#ae1b1b" : "#00AEEF");  
           return newProgress; // Повертаємо новий стан
         });
       };

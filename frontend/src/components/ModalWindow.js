@@ -3,7 +3,7 @@ import React, { useState } from "react";
 function ModalWindow({ isOpen, onClose, mission, onSave }){
 if (!isOpen) return null;
 return(
-<div className="modal-overlay">
+<div className="form-group">
           <div className="modal">
             <h3>Редагувати місію</h3>
             <form onSubmit={onSave}>
